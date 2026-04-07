@@ -122,6 +122,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addnewstudent.Designer.vb">
+      <DependentUpon>addnewstudent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="addnewstudent.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="adduserform.Designer.vb">
       <DependentUpon>adduserform.vb</DependentUpon>
     </Compile>
@@ -140,6 +146,18 @@
     <Compile Include="Announcementfrm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Billing.Designer.vb">
+      <DependentUpon>Billing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Billing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="courselist.Designer.vb">
+      <DependentUpon>courselist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="courselist.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="courses.Designer.vb">
       <DependentUpon>courses.vb</DependentUpon>
     </Compile>
@@ -147,6 +165,24 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="dbconnections.vb" />
+    <Compile Include="enrollmentfrm.Designer.vb">
+      <DependentUpon>enrollmentfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="enrollmentfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrollmentReview.Designer.vb">
+      <DependentUpon>EnrollmentReview.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EnrollmentReview.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="enrollmentslist.Designer.vb">
+      <DependentUpon>enrollmentslist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="enrollmentslist.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Financefrm.Designer.vb">
       <DependentUpon>Financefrm.vb</DependentUpon>
     </Compile>
@@ -176,10 +212,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="paymentfrm.Designer.vb">
+      <DependentUpon>paymentfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="paymentfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="registrarfrm.Designer.vb">
       <DependentUpon>registrarfrm.vb</DependentUpon>
     </Compile>
     <Compile Include="registrarfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reports.Designer.vb">
+      <DependentUpon>reports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reports.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Schedulefrm.Designer.vb">
@@ -188,10 +236,28 @@
     <Compile Include="Schedulefrm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="schedulelist.Designer.vb">
+      <DependentUpon>schedulelist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="schedulelist.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Studentinfofrm.Designer.vb">
       <DependentUpon>Studentinfofrm.vb</DependentUpon>
     </Compile>
     <Compile Include="Studentinfofrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Studentinforeg.Designer.vb">
+      <DependentUpon>Studentinforeg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Studentinforeg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subjectlist.Designer.vb">
+      <DependentUpon>subjectlist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="subjectlist.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Subjects.Designer.vb">
@@ -214,6 +280,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="addnewstudent.resx">
+      <DependentUpon>addnewstudent.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="adduserform.resx">
       <DependentUpon>adduserform.vb</DependentUpon>
     </EmbeddedResource>
@@ -223,8 +292,23 @@
     <EmbeddedResource Include="Announcementfrm.resx">
       <DependentUpon>Announcementfrm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Billing.resx">
+      <DependentUpon>Billing.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="courselist.resx">
+      <DependentUpon>courselist.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="courses.resx">
       <DependentUpon>courses.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="enrollmentfrm.resx">
+      <DependentUpon>enrollmentfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnrollmentReview.resx">
+      <DependentUpon>EnrollmentReview.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="enrollmentslist.resx">
+      <DependentUpon>enrollmentslist.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Financefrm.resx">
       <DependentUpon>Financefrm.vb</DependentUpon>
@@ -238,14 +322,29 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="paymentfrm.resx">
+      <DependentUpon>paymentfrm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="registrarfrm.resx">
       <DependentUpon>registrarfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports.resx">
+      <DependentUpon>reports.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Schedulefrm.resx">
       <DependentUpon>Schedulefrm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="schedulelist.resx">
+      <DependentUpon>schedulelist.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Studentinfofrm.resx">
       <DependentUpon>Studentinfofrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Studentinforeg.resx">
+      <DependentUpon>Studentinforeg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="subjectlist.resx">
+      <DependentUpon>subjectlist.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Subjects.resx">
       <DependentUpon>Subjects.vb</DependentUpon>
