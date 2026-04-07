@@ -1,16 +1,23 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class enrollmentreview
-    ' This variable must be set by the calling form (enrollmentlist)
+    ' Variable set by the calling form
     Public SelectedEnrollID As Integer
 
     Private Sub enrollmentreview_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' FIX: Check if the ID is valid before proceeding
         If SelectedEnrollID > 0 Then
             LoadEnrollmentHeader()
             LoadSubjectDetails()
         Else
             MsgBox("No enrollment record selected.", MsgBoxStyle.Exclamation)
-            Me.Close()
+
+            ' DO NOT USE Me.Close() HERE. 
+            ' Instead, we just stop the data loading and show an empty state.
+            lblStudentName.Text = "STUDENT: NO RECORD SELECTED"
+            lblStatus.Text = "STATUS: N/A"
+            lblStatus.ForeColor = Color.Gray
+            Return
         End If
     End Sub
 
@@ -18,7 +25,6 @@ Public Class enrollmentreview
     Private Sub LoadEnrollmentHeader()
         Try
             openConn()
-            ' Joins enrollments with students and courses for a complete header
             Dim query As String = "SELECT CONCAT(s.last_name, ', ', s.first_name) as fullname, " &
                                  "c.course_name, e.school_year, e.semester, e.status " &
                                  "FROM enrollments e " &
@@ -26,9 +32,11 @@ Public Class enrollmentreview
                                  "JOIN courses c ON e.course_id = c.course_id " &
                                  "WHERE e.enrollment_id = @eid"
 
+            ' Assuming cmd() is your global helper function
             Dim mysqlCmd As MySqlCommand = cmd(query)
             mysqlCmd.Parameters.AddWithValue("@eid", SelectedEnrollID)
 
+            ' Assuming dr is your global MySqlDataReader
             dr = mysqlCmd.ExecuteReader()
             If dr.Read() Then
                 lblStudentName.Text = "STUDENT: " & dr("fullname").ToString().ToUpper()
@@ -36,7 +44,6 @@ Public Class enrollmentreview
                                      dr("course_name"), dr("school_year"), dr("semester"))
                 lblStatus.Text = "STATUS: " & dr("status").ToString().ToUpper()
 
-                ' Visual cue for status
                 If dr("status").ToString().ToLower() = "enrolled" Then
                     lblStatus.ForeColor = Color.Green
                 Else
@@ -51,11 +58,10 @@ Public Class enrollmentreview
         End Try
     End Sub
 
-    ' 2. Fetch the List of Subjects for this specific Enrollment
+    ' 2. Fetch the List of Subjects
     Private Sub LoadSubjectDetails()
         Try
             openConn()
-            ' Joins enrollment_details with schedules and subjects
             Dim query As String = "SELECT sub.subject_code AS 'Code', " &
                                  "sub.subject_title AS 'Subject Title', " &
                                  "sub.units AS 'Units', " &
@@ -76,10 +82,13 @@ Public Class enrollmentreview
             da.Fill(dt)
             dgvDetails.DataSource = dt
 
-            ' Calculate Total Units dynamically from the grid
+            ' Calculate Total Units
             Dim totalUnits As Integer = 0
             For Each row As DataRow In dt.Rows
-                totalUnits += Convert.ToInt32(row("Units"))
+                ' Added a safety check for null/DBNull
+                If Not IsDBNull(row("Units")) Then
+                    totalUnits += Convert.ToInt32(row("Units"))
+                End If
             Next
             lblTotalUnits.Text = "TOTAL UNITS: " & totalUnits
 
@@ -91,6 +100,7 @@ Public Class enrollmentreview
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        ' This is fine here because it's triggered by a user click, not during Load
         Me.Close()
     End Sub
 End Class

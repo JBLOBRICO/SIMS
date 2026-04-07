@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class EnrollmentReview
+Partial Class enrollmentreview
     Inherits System.Windows.Forms.Form
 
     ' Fixed: Added the components declaration to resolve BC30451
@@ -129,7 +129,7 @@ Partial Class EnrollmentReview
         Me.btnClose.Text = "Close Review"
         Me.btnClose.UseVisualStyleBackColor = True
         '
-        'EnrollmentReview
+        'enrollmentreview
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -141,7 +141,7 @@ Partial Class EnrollmentReview
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "EnrollmentReview"
+        Me.Name = "enrollmentreview"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Enrollment Review"
         Me.pnlHeader.ResumeLayout(False)

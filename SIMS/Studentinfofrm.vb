@@ -15,10 +15,13 @@ Public Class Studentinfofrm
         Try
             openConn()
 
-            ' Selecting specific columns for the DataGridView
-            Dim query As String = "SELECT student_id AS [ID], first_name AS [First Name], " &
-                                 "last_name AS [Last Name], email AS [Email], " &
-                                 "birthdate AS [Birthdate], address AS [Address] " &
+            ' FIX: Use backticks (`) instead of square brackets ([]) for MariaDB/MySQL aliases
+            Dim query As String = "SELECT student_id AS `ID`, " &
+                                 "first_name AS `First Name`, " &
+                                 "last_name AS `Last Name`, " &
+                                 "email AS `Email`, " &
+                                 "birthdate AS `Birthdate`, " &
+                                 "address AS `Address` " &
                                  "FROM students "
 
             ' Add filtering logic if search term is provided
@@ -34,9 +37,11 @@ Public Class Studentinfofrm
                 sqlCmd.Parameters.AddWithValue("@search", "%" & searchTerm & "%")
 
                 Dim dt As New DataTable()
-                Dim da As New MySqlDataAdapter(sqlCmd)
-
+                ' Note: MySqlDataAdapter doesn't need to be in a 'Using' block, 
+                ' but it's good practice to clear the table before filling.
                 dt.Clear()
+
+                Dim da As New MySqlDataAdapter(sqlCmd)
                 da.Fill(dt)
 
                 dgvStudents.DataSource = dt
@@ -49,8 +54,9 @@ Public Class Studentinfofrm
         End Try
     End Sub
 
-    ' --- Search Logic (Removed 'Handles' to resolve error) ---
+    ' --- Search Logic ---
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs)
+        ' Calling the load function with the current text
         LoadStudentData(txtSearch.Text.Trim())
     End Sub
 
