@@ -16,21 +16,29 @@ Partial Class teacherfrm
 
     Private components As System.ComponentModel.IContainer
 
-    'UI Controls
-    Private pnlSidebar As Panel
-    Private pnlHeader As Panel
-    Private pnlMain As Panel
-    Private btnDashboard As Button
-    Private btnGradeEntry As Button
-    Private btnGradeList As Button
-    Private btnAnnouncements As Button
-    Private btnLogout As Button
-    Private lblHeader As Label
-    Private lblWelcome As Label
+    ' FIX: Lahat ng UI controls ay ginawa nating WithEvents para gumana ang "Handles" sa code-behind
+    Friend WithEvents pnlSidebar As Panel
+    Friend WithEvents pnlHeader As Panel
+    Friend WithEvents pnlMain As Panel
+    Friend WithEvents btnDashboard As Button
+    Friend WithEvents btnGradeEntry As Button
+    Friend WithEvents btnGradeList As Button
+    Friend WithEvents btnAnnouncements As Button
+    Friend WithEvents btnLogout As Button
+    Friend WithEvents lblHeader As Label
+    Friend WithEvents lblWelcome As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lblTitle As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
 
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.pnlSidebar = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblTitle = New System.Windows.Forms.Label()
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.btnAnnouncements = New System.Windows.Forms.Button()
         Me.btnGradeList = New System.Windows.Forms.Button()
@@ -40,10 +48,6 @@ Partial Class teacherfrm
         Me.lblHeader = New System.Windows.Forms.Label()
         Me.pnlMain = New System.Windows.Forms.Panel()
         Me.lblWelcome = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.lblTitle = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.pnlSidebar.SuspendLayout()
         Me.pnlHeader.SuspendLayout()
         Me.pnlMain.SuspendLayout()
@@ -67,6 +71,56 @@ Partial Class teacherfrm
         Me.pnlSidebar.Size = New System.Drawing.Size(200, 600)
         Me.pnlSidebar.TabIndex = 2
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Gray
+        Me.Label2.Location = New System.Drawing.Point(-21, 523)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(271, 15)
+        Me.Label2.TabIndex = 13
+        Me.Label2.Text = "——————————————————————"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Gray
+        Me.Label3.Location = New System.Drawing.Point(-21, 112)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(271, 15)
+        Me.Label3.TabIndex = 12
+        Me.Label3.Text = "——————————————————————"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Gray
+        Me.Label1.Location = New System.Drawing.Point(12, 67)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(105, 15)
+        Me.Label1.TabIndex = 10
+        Me.Label1.Text = "College of Lycem "
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblTitle
+        '
+        Me.lblTitle.AutoSize = True
+        Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitle.ForeColor = System.Drawing.Color.White
+        Me.lblTitle.Location = New System.Drawing.Point(12, 82)
+        Me.lblTitle.Name = "lblTitle"
+        Me.lblTitle.Size = New System.Drawing.Size(119, 21)
+        Me.lblTitle.TabIndex = 9
+        Me.lblTitle.Text = "Teacher Portal"
+        Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'btnLogout
         '
         Me.btnLogout.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(14, Byte), Integer), CType(CType(24, Byte), Integer))
@@ -74,11 +128,11 @@ Partial Class teacherfrm
         Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogout.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnLogout.ForeColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(78, Byte), Integer))
-        Me.btnLogout.Location = New System.Drawing.Point(15, 541)
+        Me.btnLogout.Location = New System.Drawing.Point(0, 541)
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.Size = New System.Drawing.Size(200, 50)
         Me.btnLogout.TabIndex = 0
-        Me.btnLogout.Text = "Logout"
+        Me.btnLogout.Text = "  Logout"
         Me.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLogout.UseVisualStyleBackColor = False
         '
@@ -89,11 +143,11 @@ Partial Class teacherfrm
         Me.btnAnnouncements.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAnnouncements.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAnnouncements.ForeColor = System.Drawing.Color.White
-        Me.btnAnnouncements.Location = New System.Drawing.Point(16, 296)
+        Me.btnAnnouncements.Location = New System.Drawing.Point(0, 296)
         Me.btnAnnouncements.Name = "btnAnnouncements"
         Me.btnAnnouncements.Size = New System.Drawing.Size(200, 50)
         Me.btnAnnouncements.TabIndex = 1
-        Me.btnAnnouncements.Text = "Announcements"
+        Me.btnAnnouncements.Text = "  Announcements"
         Me.btnAnnouncements.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAnnouncements.UseVisualStyleBackColor = False
         '
@@ -104,11 +158,11 @@ Partial Class teacherfrm
         Me.btnGradeList.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGradeList.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGradeList.ForeColor = System.Drawing.Color.White
-        Me.btnGradeList.Location = New System.Drawing.Point(16, 246)
+        Me.btnGradeList.Location = New System.Drawing.Point(0, 246)
         Me.btnGradeList.Name = "btnGradeList"
         Me.btnGradeList.Size = New System.Drawing.Size(200, 50)
         Me.btnGradeList.TabIndex = 2
-        Me.btnGradeList.Text = "Grade List"
+        Me.btnGradeList.Text = "  Grade List"
         Me.btnGradeList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnGradeList.UseVisualStyleBackColor = False
         '
@@ -119,11 +173,11 @@ Partial Class teacherfrm
         Me.btnGradeEntry.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGradeEntry.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGradeEntry.ForeColor = System.Drawing.Color.White
-        Me.btnGradeEntry.Location = New System.Drawing.Point(16, 196)
+        Me.btnGradeEntry.Location = New System.Drawing.Point(0, 196)
         Me.btnGradeEntry.Name = "btnGradeEntry"
         Me.btnGradeEntry.Size = New System.Drawing.Size(200, 50)
         Me.btnGradeEntry.TabIndex = 3
-        Me.btnGradeEntry.Text = "Grade Entry"
+        Me.btnGradeEntry.Text = "  Grade Entry"
         Me.btnGradeEntry.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnGradeEntry.UseVisualStyleBackColor = False
         '
@@ -134,11 +188,11 @@ Partial Class teacherfrm
         Me.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDashboard.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDashboard.ForeColor = System.Drawing.Color.White
-        Me.btnDashboard.Location = New System.Drawing.Point(16, 146)
+        Me.btnDashboard.Location = New System.Drawing.Point(0, 146)
         Me.btnDashboard.Name = "btnDashboard"
         Me.btnDashboard.Size = New System.Drawing.Size(200, 50)
         Me.btnDashboard.TabIndex = 4
-        Me.btnDashboard.Text = "Dashboard"
+        Me.btnDashboard.Text = "  Dashboard"
         Me.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnDashboard.UseVisualStyleBackColor = False
         '
@@ -188,56 +242,6 @@ Partial Class teacherfrm
         Me.lblWelcome.Text = "Welcome Teacher!" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Use the menu to access Grades and Announcements."
         Me.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Gray
-        Me.Label1.Location = New System.Drawing.Point(12, 67)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(105, 15)
-        Me.Label1.TabIndex = 10
-        Me.Label1.Text = "College of Lycem "
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblTitle
-        '
-        Me.lblTitle.AutoSize = True
-        Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitle.ForeColor = System.Drawing.Color.White
-        Me.lblTitle.Location = New System.Drawing.Point(12, 82)
-        Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(119, 21)
-        Me.lblTitle.TabIndex = 9
-        Me.lblTitle.Text = "Teacher Portal"
-        Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Gray
-        Me.Label3.Location = New System.Drawing.Point(-21, 112)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(271, 15)
-        Me.Label3.TabIndex = 12
-        Me.Label3.Text = "——————————————————————"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Gray
-        Me.Label2.Location = New System.Drawing.Point(-21, 523)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(271, 15)
-        Me.Label2.TabIndex = 13
-        Me.Label2.Text = "——————————————————————"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'teacherfrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -256,9 +260,4 @@ Partial Class teacherfrm
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Label1 As Label
-    Friend WithEvents lblTitle As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
 End Class
