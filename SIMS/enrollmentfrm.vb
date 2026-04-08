@@ -79,6 +79,19 @@ Public Class enrollmentfrm
 
         Try
             openConn()
+            Dim checkQuery As String = "SELECT COUNT(*) FROM enrollments WHERE student_id = @sid AND school_year = @sy AND semester = @sem"
+            Dim checkCmd As MySqlCommand = cmd(checkQuery)
+            checkCmd.Parameters.AddWithValue("@sid", cmbStudent.SelectedValue)
+            checkCmd.Parameters.AddWithValue("@sy", txtSchoolYear.Text)
+            checkCmd.Parameters.AddWithValue("@sem", cmbSemester.Text)
+
+            Dim existingCount As Integer = Convert.ToInt32(checkCmd.ExecuteScalar())
+
+            If existingCount > 0 Then
+                MsgBox("This student is already enrolled for the selected school year and semester.", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+
             Dim transaction As MySqlTransaction = conn.BeginTransaction()
 
             ' 2. Insert into 'enrollments'

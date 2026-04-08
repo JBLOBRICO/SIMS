@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Imports MySql.Data.MySqlClient
 
 Public Class loginfrm
 
@@ -30,24 +31,39 @@ Public Class loginfrm
 
                     MsgBox("Login Successful! Welcome, " & txtUsername.Text, MsgBoxStyle.Information, "Access Granted")
 
-                    ' 5. Itago ang login form
-                    Me.Hide()
 
-                    ' 6. Navigation base sa role sa database
-                    ' Paalala: Siguraduhin na ang "Admin" o "Student" ay kapareho ng nasa database rows mo
+
                     If userRole.ToLower() = "admin" Then
-                        ' AdminDashboard.Show() ' Palitan mo ito ng tamang pangalan ng Admin Form mo
                         MsgBox("Opening Admin Dashboard...", MsgBoxStyle.Information)
+                        Me.Hide()
                         Adminfrm.Show()
+
+                    ElseIf userRole.ToLower() = "registrar" Then
+                        MsgBox("Opening Registrar Dashboard...", MsgBoxStyle.Information)
+                        Me.Hide()
+                        registrarfrm.Show()
+
+                    ElseIf userRole.ToLower() = "accounting" Then
+                        MsgBox("Opening Finance Dashboard...", MsgBoxStyle.Information)
+                        Me.Hide()
+                        Financefrm.Show()
+
+                    ElseIf userRole.ToLower() = "teacher" OrElse userRole.ToLower() = "faculty" Then
+                        MsgBox("Opening Faculty Dashboard...", MsgBoxStyle.Information)
+                        Me.Hide()
+                        teacherfrm.Show()
+
                     ElseIf userRole.ToLower() = "student" Then
-                        ' StudentDashboard.Show() ' Palitan mo ito ng tamang pangalan ng Student Form mo
-                        MsgBox("Opening Student Dashboard...", MsgBoxStyle.Information)
+                        MsgBox("Students must log in through the web portal.", MsgBoxStyle.Exclamation)
+
+                        Me.Show()
 
                     Else
-                        ' Sakaling may ibang role (e.g. Staff, Teacher)
                         MsgBox("Role not recognized. Please contact admin.", MsgBoxStyle.Exclamation)
+
                         Me.Show()
                     End If
+
                 Else
                     ' Kapag walang nahanap na match na user/pass
                     MsgBox("Invalid Username or Password.", MsgBoxStyle.Critical, "Access Denied")
@@ -64,6 +80,34 @@ Public Class loginfrm
     End Sub
 
     Private Sub loginfrm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Circle para sa PictureBox
+        Dim pathPic As New System.Drawing.Drawing2D.GraphicsPath()
+        pathPic.AddEllipse(0, 0, PictureBox1.Width, PictureBox1.Height)
+        PictureBox1.Region = New Region(pathPic)
 
+        ' Rounded corners para sa Panel
+        Dim pathPanel As New System.Drawing.Drawing2D.GraphicsPath()
+        pathPanel.AddArc(0, 0, 20, 20, 180, 90)
+        pathPanel.AddArc(pnlContainer.Width - 20, 0, 20, 20, 270, 90)
+        pathPanel.AddArc(pnlContainer.Width - 20, pnlContainer.Height - 20, 20, 20, 0, 90)
+        pathPanel.AddArc(0, pnlContainer.Height - 20, 20, 20, 90, 90)
+        pathPanel.CloseFigure()
+        pnlContainer.Region = New Region(pathPanel)
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If result = DialogResult.Yes Then
+            Application.Exit()
+        End If
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked Then
+            txtPassword.PasswordChar = Chr(0)
+        Else
+            txtPassword.PasswordChar = "●"
+        End If
     End Sub
 End Class

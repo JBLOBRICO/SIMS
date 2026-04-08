@@ -195,7 +195,7 @@ Partial Class Adminfrm
         Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlHeader.Location = New System.Drawing.Point(220, 0)
         Me.pnlHeader.Name = "pnlHeader"
-        Me.pnlHeader.Size = New System.Drawing.Size(1182, 60)
+        Me.pnlHeader.Size = New System.Drawing.Size(1150, 60)
         Me.pnlHeader.TabIndex = 1
         '
         'lblHeader
@@ -206,7 +206,7 @@ Partial Class Adminfrm
         Me.lblHeader.Location = New System.Drawing.Point(0, 0)
         Me.lblHeader.Name = "lblHeader"
         Me.lblHeader.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.lblHeader.Size = New System.Drawing.Size(1182, 60)
+        Me.lblHeader.Size = New System.Drawing.Size(1150, 60)
         Me.lblHeader.TabIndex = 0
         Me.lblHeader.Text = "Admin Dashboard"
         Me.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -218,7 +218,7 @@ Partial Class Adminfrm
         Me.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlMain.Location = New System.Drawing.Point(220, 60)
         Me.pnlMain.Name = "pnlMain"
-        Me.pnlMain.Size = New System.Drawing.Size(1182, 678)
+        Me.pnlMain.Size = New System.Drawing.Size(1150, 678)
         Me.pnlMain.TabIndex = 0
         '
         'lblDashboardWelcome
@@ -228,7 +228,7 @@ Partial Class Adminfrm
         Me.lblDashboardWelcome.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.lblDashboardWelcome.Location = New System.Drawing.Point(0, 0)
         Me.lblDashboardWelcome.Name = "lblDashboardWelcome"
-        Me.lblDashboardWelcome.Size = New System.Drawing.Size(1182, 678)
+        Me.lblDashboardWelcome.Size = New System.Drawing.Size(1150, 678)
         Me.lblDashboardWelcome.TabIndex = 0
         Me.lblDashboardWelcome.Text = "Welcome to the Admin Dashboard!" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Use the menu to access modules."
         Me.lblDashboardWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -237,7 +237,7 @@ Partial Class Adminfrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1402, 738)
+        Me.ClientSize = New System.Drawing.Size(1370, 738)
         Me.ControlBox = False
         Me.Controls.Add(Me.pnlMain)
         Me.Controls.Add(Me.pnlHeader)

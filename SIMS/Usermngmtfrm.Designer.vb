@@ -16,18 +16,8 @@ Partial Class Usermngmtfrm
             MyBase.Dispose(disposing)
         End Try
     End Sub
-
-    ' Windows Form Designer component declarations
-    Private lblHeader As Label
-    Private pnlHeader As Panel
     Private pnlDivider As Panel
-    Private pnlToolbar As Panel
-    Private lblSearch As Label
     Private txtSearch As TextBox
-    Private btnAdd As Button
-    Private btnEdit As Button
-    Private btnApprove As Button
-    Private btnDelete As Button
     Private dgvUsers As DataGridView
     Private statusStrip1 As StatusStrip
     Private lblStatusInfo As ToolStripStatusLabel
@@ -38,57 +28,40 @@ Partial Class Usermngmtfrm
     Private colUsername As DataGridViewTextBoxColumn
     Private colEmail As DataGridViewTextBoxColumn
     Private colRole As DataGridViewTextBoxColumn
+    Private colStatus As DataGridViewTextBoxColumn
     Private colDateAdded As DataGridViewTextBoxColumn
 
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.lblHeader = New System.Windows.Forms.Label()
-        Me.pnlHeader = New System.Windows.Forms.Panel()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlDivider = New System.Windows.Forms.Panel()
-        Me.pnlToolbar = New System.Windows.Forms.Panel()
-        Me.lblSearch = New System.Windows.Forms.Label()
         Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.btnAdd = New System.Windows.Forms.Button()
-        Me.btnEdit = New System.Windows.Forms.Button()
-        Me.btnApprove = New System.Windows.Forms.Button()
-        Me.btnDelete = New System.Windows.Forms.Button()
         Me.dgvUsers = New System.Windows.Forms.DataGridView()
         Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colUsername = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colEmail = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colRole = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colDateAdded = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.statusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.lblStatusInfo = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.pnlHeader.SuspendLayout()
-        Me.pnlToolbar.SuspendLayout()
+        Me.lblHeader = New System.Windows.Forms.Label()
+        Me.pnlHeader = New System.Windows.Forms.Panel()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnApprove = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.pnlToolbar = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.dgvUsers, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.statusStrip1.SuspendLayout()
+        Me.pnlHeader.SuspendLayout()
+        Me.pnlToolbar.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'lblHeader
-        '
-        Me.lblHeader.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lblHeader.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Bold)
-        Me.lblHeader.ForeColor = System.Drawing.Color.White
-        Me.lblHeader.Location = New System.Drawing.Point(0, 0)
-        Me.lblHeader.Name = "lblHeader"
-        Me.lblHeader.Padding = New System.Windows.Forms.Padding(18, 0, 0, 0)
-        Me.lblHeader.Size = New System.Drawing.Size(1100, 60)
-        Me.lblHeader.TabIndex = 0
-        Me.lblHeader.Text = "👤  User Management Control Center"
-        Me.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'pnlHeader
-        '
-        Me.pnlHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.pnlHeader.Controls.Add(Me.lblHeader)
-        Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlHeader.Location = New System.Drawing.Point(0, 0)
-        Me.pnlHeader.Name = "pnlHeader"
-        Me.pnlHeader.Size = New System.Drawing.Size(1100, 60)
-        Me.pnlHeader.TabIndex = 3
         '
         'pnlDivider
         '
@@ -99,99 +72,75 @@ Partial Class Usermngmtfrm
         Me.pnlDivider.Size = New System.Drawing.Size(1100, 2)
         Me.pnlDivider.TabIndex = 2
         '
-        'pnlToolbar
-        '
-        Me.pnlToolbar.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(253, Byte), Integer))
-        Me.pnlToolbar.Controls.Add(Me.lblSearch)
-        Me.pnlToolbar.Controls.Add(Me.txtSearch)
-        Me.pnlToolbar.Controls.Add(Me.btnAdd)
-        Me.pnlToolbar.Controls.Add(Me.btnEdit)
-        Me.pnlToolbar.Controls.Add(Me.btnApprove)
-        Me.pnlToolbar.Controls.Add(Me.btnDelete)
-        Me.pnlToolbar.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlToolbar.Location = New System.Drawing.Point(0, 62)
-        Me.pnlToolbar.Name = "pnlToolbar"
-        Me.pnlToolbar.Size = New System.Drawing.Size(1100, 56)
-        Me.pnlToolbar.TabIndex = 1
-        '
-        'lblSearch
-        '
-        Me.lblSearch.Location = New System.Drawing.Point(0, 0)
-        Me.lblSearch.Name = "lblSearch"
-        Me.lblSearch.Size = New System.Drawing.Size(100, 23)
-        Me.lblSearch.TabIndex = 0
-        '
         'txtSearch
         '
-        Me.txtSearch.Location = New System.Drawing.Point(120, 15)
+        Me.txtSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtSearch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(14, Byte), Integer), CType(CType(24, Byte), Integer))
+        Me.txtSearch.Location = New System.Drawing.Point(25, 16)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(250, 20)
+        Me.txtSearch.Size = New System.Drawing.Size(260, 23)
         Me.txtSearch.TabIndex = 1
         Me.txtSearch.Text = "Search users..."
-        '
-        'btnAdd
-        '
-        Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAdd.ForeColor = System.Drawing.Color.White
-        Me.btnAdd.Location = New System.Drawing.Point(385, 13)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(100, 30)
-        Me.btnAdd.TabIndex = 2
-        Me.btnAdd.Text = "+ Add"
-        Me.btnAdd.UseVisualStyleBackColor = False
-        '
-        'btnEdit
-        '
-        Me.btnEdit.Location = New System.Drawing.Point(0, 0)
-        Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(75, 23)
-        Me.btnEdit.TabIndex = 3
-        '
-        'btnApprove
-        '
-        Me.btnApprove.BackColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(196, Byte), Integer), CType(CType(89, Byte), Integer))
-        Me.btnApprove.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnApprove.ForeColor = System.Drawing.Color.White
-        Me.btnApprove.Location = New System.Drawing.Point(495, 13)
-        Me.btnApprove.Name = "btnApprove"
-        Me.btnApprove.Size = New System.Drawing.Size(100, 30)
-        Me.btnApprove.TabIndex = 4
-        Me.btnApprove.Text = "✓ Approve"
-        Me.btnApprove.UseVisualStyleBackColor = False
-        '
-        'btnDelete
-        '
-        Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDelete.ForeColor = System.Drawing.Color.White
-        Me.btnDelete.Location = New System.Drawing.Point(605, 13)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(100, 30)
-        Me.btnDelete.TabIndex = 5
-        Me.btnDelete.Text = "🗑 Delete"
-        Me.btnDelete.UseVisualStyleBackColor = False
         '
         'dgvUsers
         '
         Me.dgvUsers.AllowUserToAddRows = False
+        Me.dgvUsers.AllowUserToDeleteRows = False
+        Me.dgvUsers.AllowUserToResizeColumns = False
+        Me.dgvUsers.AllowUserToResizeRows = False
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(249, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.dgvUsers.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvUsers.BackgroundColor = System.Drawing.Color.White
         Me.dgvUsers.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgvUsers.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.colName, Me.colUsername, Me.colEmail, Me.colRole, Me.colDateAdded})
+        Me.dgvUsers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dgvUsers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(246, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvUsers.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        Me.dgvUsers.ColumnHeadersHeight = 38
+        Me.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvUsers.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.colName, Me.colUsername, Me.colEmail, Me.colRole, Me.colStatus, Me.colDateAdded})
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
+        DataGridViewCellStyle7.Padding = New System.Windows.Forms.Padding(0, 6, 0, 6)
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(223, Byte), Integer))
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvUsers.DefaultCellStyle = DataGridViewCellStyle7
         Me.dgvUsers.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvUsers.Location = New System.Drawing.Point(0, 118)
+        Me.dgvUsers.EnableHeadersVisualStyles = False
+        Me.dgvUsers.GridColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
+        Me.dgvUsers.Location = New System.Drawing.Point(15, 10)
         Me.dgvUsers.MultiSelect = False
         Me.dgvUsers.Name = "dgvUsers"
+        Me.dgvUsers.ReadOnly = True
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(248, Byte), Integer))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(208, Byte), Integer))
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(14, Byte), Integer), CType(CType(24, Byte), Integer))
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvUsers.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.dgvUsers.RowHeadersVisible = False
         Me.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvUsers.Size = New System.Drawing.Size(1100, 540)
+        Me.dgvUsers.Size = New System.Drawing.Size(1070, 506)
         Me.dgvUsers.TabIndex = 0
         '
         'colID
         '
         Me.colID.DataPropertyName = "user_id"
         Me.colID.Name = "colID"
+        Me.colID.ReadOnly = True
         Me.colID.Visible = False
         '
         'colName
@@ -199,30 +148,42 @@ Partial Class Usermngmtfrm
         Me.colName.DataPropertyName = "full_name"
         Me.colName.HeaderText = "Full Name / Student"
         Me.colName.Name = "colName"
+        Me.colName.ReadOnly = True
         '
         'colUsername
         '
         Me.colUsername.DataPropertyName = "username"
         Me.colUsername.HeaderText = "Username"
         Me.colUsername.Name = "colUsername"
+        Me.colUsername.ReadOnly = True
         '
         'colEmail
         '
         Me.colEmail.DataPropertyName = "email"
         Me.colEmail.HeaderText = "Email Address"
         Me.colEmail.Name = "colEmail"
+        Me.colEmail.ReadOnly = True
         '
         'colRole
         '
         Me.colRole.DataPropertyName = "role"
         Me.colRole.HeaderText = "Role"
         Me.colRole.Name = "colRole"
+        Me.colRole.ReadOnly = True
+
+        'colStatus
+        '
+        Me.colStatus.DataPropertyName = "status"
+        Me.colStatus.HeaderText = "Status"
+        Me.colStatus.Name = "colStatus"
+
         '
         'colDateAdded
         '
         Me.colDateAdded.DataPropertyName = "created_at"
         Me.colDateAdded.HeaderText = "Registration Date"
         Me.colDateAdded.Name = "colDateAdded"
+        Me.colDateAdded.ReadOnly = True
         '
         'statusStrip1
         '
@@ -237,25 +198,121 @@ Partial Class Usermngmtfrm
         Me.lblStatusInfo.Name = "lblStatusInfo"
         Me.lblStatusInfo.Size = New System.Drawing.Size(0, 17)
         '
+        'lblHeader
+        '
+        Me.lblHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(137, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblHeader.Dock = System.Windows.Forms.DockStyle.Top
+        Me.lblHeader.Font = New System.Drawing.Font("Segoe UI Semibold", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHeader.ForeColor = System.Drawing.Color.White
+        Me.lblHeader.Location = New System.Drawing.Point(0, 0)
+        Me.lblHeader.Name = "lblHeader"
+        Me.lblHeader.Padding = New System.Windows.Forms.Padding(18, 0, 0, 0)
+        Me.lblHeader.Size = New System.Drawing.Size(1100, 70)
+        Me.lblHeader.TabIndex = 0
+        Me.lblHeader.Text = "👤  User Management Control Center"
+        Me.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'pnlHeader
+        '
+        Me.pnlHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(95, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.pnlHeader.Controls.Add(Me.lblHeader)
+        Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlHeader.Location = New System.Drawing.Point(0, 0)
+        Me.pnlHeader.Name = "pnlHeader"
+        Me.pnlHeader.Size = New System.Drawing.Size(1100, 60)
+        Me.pnlHeader.TabIndex = 3
+        '
+        'btnDelete
+        '
+        Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(78, Byte), Integer))
+        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDelete.ForeColor = System.Drawing.Color.White
+        Me.btnDelete.Location = New System.Drawing.Point(840, 11)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(100, 30)
+        Me.btnDelete.TabIndex = 5
+        Me.btnDelete.Text = "🗑 Delete"
+        Me.btnDelete.UseVisualStyleBackColor = False
+        '
+        'btnApprove
+        '
+        Me.btnApprove.BackColor = System.Drawing.Color.FromArgb(CType(CType(214, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(120, Byte), Integer))
+        Me.btnApprove.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnApprove.ForeColor = System.Drawing.Color.White
+        Me.btnApprove.Location = New System.Drawing.Point(730, 11)
+        Me.btnApprove.Name = "btnApprove"
+        Me.btnApprove.Size = New System.Drawing.Size(100, 30)
+        Me.btnApprove.TabIndex = 4
+        Me.btnApprove.Text = "✓ Approve"
+        Me.btnApprove.UseVisualStyleBackColor = False
+        '
+        'btnAdd
+        '
+        Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(137, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAdd.ForeColor = System.Drawing.Color.White
+        Me.btnAdd.Location = New System.Drawing.Point(620, 11)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(100, 30)
+        Me.btnAdd.TabIndex = 2
+        Me.btnAdd.Text = "+ Add"
+        Me.btnAdd.UseVisualStyleBackColor = False
+        '
+        'pnlToolbar
+        '
+        Me.pnlToolbar.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(253, Byte), Integer))
+        Me.pnlToolbar.Controls.Add(Me.txtSearch)
+        Me.pnlToolbar.Controls.Add(Me.btnAdd)
+        Me.pnlToolbar.Controls.Add(Me.btnApprove)
+        Me.pnlToolbar.Controls.Add(Me.btnDelete)
+        Me.pnlToolbar.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlToolbar.Location = New System.Drawing.Point(0, 62)
+        Me.pnlToolbar.Name = "pnlToolbar"
+        Me.pnlToolbar.Size = New System.Drawing.Size(1100, 65)
+        Me.pnlToolbar.TabIndex = 1
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.dgvUsers)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 127)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Padding = New System.Windows.Forms.Padding(15, 10, 15, 15)
+        Me.Panel1.Size = New System.Drawing.Size(1100, 531)
+        Me.Panel1.TabIndex = 5
+        '
         'Usermngmtfrm
         '
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1100, 680)
-        Me.Controls.Add(Me.dgvUsers)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.pnlToolbar)
         Me.Controls.Add(Me.pnlDivider)
         Me.Controls.Add(Me.pnlHeader)
         Me.Controls.Add(Me.statusStrip1)
+        Me.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "Usermngmtfrm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "User Management"
-        Me.pnlHeader.ResumeLayout(False)
-        Me.pnlToolbar.ResumeLayout(False)
-        Me.pnlToolbar.PerformLayout()
         CType(Me.dgvUsers, System.ComponentModel.ISupportInitialize).EndInit()
         Me.statusStrip1.ResumeLayout(False)
         Me.statusStrip1.PerformLayout()
+        Me.pnlHeader.ResumeLayout(False)
+        Me.pnlToolbar.ResumeLayout(False)
+        Me.pnlToolbar.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
+
+    Private WithEvents lblHeader As Label
+    Private WithEvents pnlHeader As Panel
+    Private WithEvents btnDelete As Button
+    Private WithEvents btnApprove As Button
+    Private WithEvents btnAdd As Button
+    Private WithEvents pnlToolbar As Panel
+    Friend WithEvents Panel1 As Panel
 End Class

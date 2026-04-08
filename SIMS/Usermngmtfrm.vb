@@ -19,11 +19,12 @@ Public Class Usermngmtfrm
             openConn()
 
             Dim sql As String = "SELECT u.user_id, " &
-                               "IFNULL(CONCAT(s.first_name, ' ', s.last_name), 'SYSTEM STAFF') AS full_name, " &
-                               "u.username, u.role, u.created_at, " &
-                               "IFNULL(s.email, 'N/A') AS email " &
-                               "FROM users u " &
-                               "LEFT JOIN students s ON u.user_id = s.user_id "
+                                   "IFNULL(CONCAT(s.first_name, ' ', s.last_name), 'SYSTEM STAFF') AS full_name, " &
+                                   "u.username, u.role, u.status, u.created_at, " &
+                                   "IFNULL(s.email, 'N/A') AS email " &
+                                   "FROM users u " &
+                                   "LEFT JOIN students s ON u.user_id = s.user_id "
+
 
             If Not String.IsNullOrEmpty(searchTerm) Then
                 sql &= " WHERE u.username LIKE @search OR s.first_name LIKE @search OR s.last_name LIKE @search"
@@ -122,6 +123,18 @@ Public Class Usermngmtfrm
                 closeConn()
             End Try
         End If
+    End Sub
+
+    Private Sub lblSearch_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub dgvUsers_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+
+    End Sub
+
+    Private Sub dgvUsers_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs)
+
     End Sub
 
 End Class

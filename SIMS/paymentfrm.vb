@@ -46,6 +46,35 @@ Public Class paymentfrm
     End Sub
 
     Private Sub btnProcessPayment_Click(sender As Object, e As EventArgs) Handles btnProcessPayment.Click
+        If selectedBillingID = 0 Then
+            MsgBox("Please select a bill first.")
+            Return
+        End If
+
+        Dim paymentAmount As Decimal
+        If Not Decimal.TryParse(txtAmountToPay.Text, paymentAmount) Then
+            MsgBox("Please enter a valid payment amount.")
+            Return
+        End If
+
+        If paymentAmount <= 0 Then
+            MsgBox("Payment amount must be greater than zero.")
+            Return
+        End If
+
+        If String.IsNullOrWhiteSpace(txtReferenceNo.Text) Then
+            MsgBox("Please enter a reference number.")
+            Return
+        End If
+
+        Dim currentBalance As Decimal = CDec(dgvBills.SelectedRows(0).Cells("balance").Value)
+
+        If paymentAmount > currentBalance Then
+            MsgBox("Payment amount cannot be greater than the current balance.")
+            Return
+        End If
+
+
         If selectedBillingID = 0 Or txtAmountToPay.Text = "" Then
             MsgBox("Please select a bill and enter an amount.")
             Return
@@ -61,14 +90,14 @@ Public Class paymentfrm
                 Dim payQuery As String = "INSERT INTO payments (billing_id, amount_paid, reference_no) VALUES (@bid, @amt, @ref)"
                 Dim payCmd = New MySqlCommand(payQuery, conn, trans)
                 payCmd.Parameters.AddWithValue("@bid", selectedBillingID)
-                payCmd.Parameters.AddWithValue("@amt", txtAmountToPay.Text)
+                payCmd.Parameters.AddWithValue("@amt", paymentAmount)
                 payCmd.Parameters.AddWithValue("@ref", txtReferenceNo.Text)
                 payCmd.ExecuteNonQuery()
 
                 ' 2. Update Billing Table (Add the new payment to existing paid_amount)
                 Dim billQuery As String = "UPDATE billing SET paid_amount = paid_amount + @amt WHERE billing_id = @bid"
                 Dim billCmd = New MySqlCommand(billQuery, conn, trans)
-                billCmd.Parameters.AddWithValue("@amt", txtAmountToPay.Text)
+                billCmd.Parameters.AddWithValue("@amt", paymentAmount)
                 billCmd.Parameters.AddWithValue("@bid", selectedBillingID)
                 billCmd.ExecuteNonQuery()
 

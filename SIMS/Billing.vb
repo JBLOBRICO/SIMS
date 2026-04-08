@@ -73,19 +73,31 @@ Public Class Billing
 
     ' 5. PARTIAL PAYMENT LOGIC
     Private Sub btnPartialPay_Click(sender As Object, e As EventArgs) Handles btnPartialPay.Click
-        Dim amount As Decimal
-        If Decimal.TryParse(txtPaymentInput.Text, amount) AndAlso amount > 0 Then
-            Dim currentBalance As Decimal = CDec(dgvBilling.SelectedRows(0).Cells("balance").Value)
-
-            If amount > currentBalance Then
-                MsgBox("Partial payment cannot be greater than the remaining balance!")
-                Return
-            End If
-
-            ProcessPayment(amount, "Partial Payment")
-        Else
-            MsgBox("Please enter a valid payment amount.")
+        If selectedBillingID = 0 Then
+            MsgBox("Please select a student record first.")
+            Return
         End If
+
+        Dim amount As Decimal
+        If Not Decimal.TryParse(txtPaymentInput.Text, amount) Then
+            MsgBox("Please enter a valid payment amount.")
+            Return
+        End If
+
+        If amount <= 0 Then
+            MsgBox("Payment amount must be greater than zero.")
+            Return
+        End If
+
+        Dim currentBalance As Decimal = CDec(dgvBilling.SelectedRows(0).Cells("balance").Value)
+
+        If amount > currentBalance Then
+            MsgBox("Partial payment cannot be greater than the remaining balance!")
+            Return
+        End If
+
+        ProcessPayment(amount, "Partial Payment")
+
     End Sub
 
     ' 6. SHARED CORE PROCESSOR: Updates billing and inserts into payments table

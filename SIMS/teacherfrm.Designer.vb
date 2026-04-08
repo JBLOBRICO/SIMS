@@ -40,6 +40,10 @@ Partial Class teacherfrm
         Me.lblHeader = New System.Windows.Forms.Label()
         Me.pnlMain = New System.Windows.Forms.Panel()
         Me.lblWelcome = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblTitle = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.pnlSidebar.SuspendLayout()
         Me.pnlHeader.SuspendLayout()
         Me.pnlMain.SuspendLayout()
@@ -47,7 +51,11 @@ Partial Class teacherfrm
         '
         'pnlSidebar
         '
-        Me.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(14, Byte), Integer), CType(CType(24, Byte), Integer))
+        Me.pnlSidebar.Controls.Add(Me.Label2)
+        Me.pnlSidebar.Controls.Add(Me.Label3)
+        Me.pnlSidebar.Controls.Add(Me.Label1)
+        Me.pnlSidebar.Controls.Add(Me.lblTitle)
         Me.pnlSidebar.Controls.Add(Me.btnLogout)
         Me.pnlSidebar.Controls.Add(Me.btnAnnouncements)
         Me.pnlSidebar.Controls.Add(Me.btnGradeList)
@@ -61,77 +69,77 @@ Partial Class teacherfrm
         '
         'btnLogout
         '
-        Me.btnLogout.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnLogout.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnLogout.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(14, Byte), Integer), CType(CType(24, Byte), Integer))
         Me.btnLogout.FlatAppearance.BorderSize = 0
         Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogout.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.btnLogout.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.btnLogout.Location = New System.Drawing.Point(0, 200)
+        Me.btnLogout.ForeColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(78, Byte), Integer))
+        Me.btnLogout.Location = New System.Drawing.Point(15, 541)
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.Size = New System.Drawing.Size(200, 50)
         Me.btnLogout.TabIndex = 0
         Me.btnLogout.Text = "Logout"
+        Me.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLogout.UseVisualStyleBackColor = False
         '
         'btnAnnouncements
         '
-        Me.btnAnnouncements.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnAnnouncements.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnAnnouncements.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(14, Byte), Integer), CType(CType(24, Byte), Integer))
         Me.btnAnnouncements.FlatAppearance.BorderSize = 0
         Me.btnAnnouncements.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAnnouncements.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.btnAnnouncements.ForeColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.btnAnnouncements.Location = New System.Drawing.Point(0, 150)
+        Me.btnAnnouncements.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAnnouncements.ForeColor = System.Drawing.Color.White
+        Me.btnAnnouncements.Location = New System.Drawing.Point(16, 296)
         Me.btnAnnouncements.Name = "btnAnnouncements"
         Me.btnAnnouncements.Size = New System.Drawing.Size(200, 50)
         Me.btnAnnouncements.TabIndex = 1
         Me.btnAnnouncements.Text = "Announcements"
+        Me.btnAnnouncements.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAnnouncements.UseVisualStyleBackColor = False
         '
         'btnGradeList
         '
-        Me.btnGradeList.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnGradeList.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnGradeList.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(14, Byte), Integer), CType(CType(24, Byte), Integer))
         Me.btnGradeList.FlatAppearance.BorderSize = 0
         Me.btnGradeList.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGradeList.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.btnGradeList.ForeColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.btnGradeList.Location = New System.Drawing.Point(0, 100)
+        Me.btnGradeList.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGradeList.ForeColor = System.Drawing.Color.White
+        Me.btnGradeList.Location = New System.Drawing.Point(16, 246)
         Me.btnGradeList.Name = "btnGradeList"
         Me.btnGradeList.Size = New System.Drawing.Size(200, 50)
         Me.btnGradeList.TabIndex = 2
         Me.btnGradeList.Text = "Grade List"
+        Me.btnGradeList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnGradeList.UseVisualStyleBackColor = False
         '
         'btnGradeEntry
         '
-        Me.btnGradeEntry.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnGradeEntry.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnGradeEntry.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(14, Byte), Integer), CType(CType(24, Byte), Integer))
         Me.btnGradeEntry.FlatAppearance.BorderSize = 0
         Me.btnGradeEntry.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGradeEntry.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.btnGradeEntry.ForeColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.btnGradeEntry.Location = New System.Drawing.Point(0, 50)
+        Me.btnGradeEntry.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGradeEntry.ForeColor = System.Drawing.Color.White
+        Me.btnGradeEntry.Location = New System.Drawing.Point(16, 196)
         Me.btnGradeEntry.Name = "btnGradeEntry"
         Me.btnGradeEntry.Size = New System.Drawing.Size(200, 50)
         Me.btnGradeEntry.TabIndex = 3
         Me.btnGradeEntry.Text = "Grade Entry"
+        Me.btnGradeEntry.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnGradeEntry.UseVisualStyleBackColor = False
         '
         'btnDashboard
         '
-        Me.btnDashboard.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnDashboard.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(14, Byte), Integer), CType(CType(24, Byte), Integer))
         Me.btnDashboard.FlatAppearance.BorderSize = 0
         Me.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDashboard.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold)
-        Me.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(144, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnDashboard.Location = New System.Drawing.Point(0, 0)
+        Me.btnDashboard.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDashboard.ForeColor = System.Drawing.Color.White
+        Me.btnDashboard.Location = New System.Drawing.Point(16, 146)
         Me.btnDashboard.Name = "btnDashboard"
         Me.btnDashboard.Size = New System.Drawing.Size(200, 50)
         Me.btnDashboard.TabIndex = 4
         Me.btnDashboard.Text = "Dashboard"
+        Me.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnDashboard.UseVisualStyleBackColor = False
         '
         'pnlHeader
@@ -146,9 +154,10 @@ Partial Class teacherfrm
         '
         'lblHeader
         '
+        Me.lblHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(107, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.lblHeader.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lblHeader.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Bold)
-        Me.lblHeader.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.lblHeader.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHeader.ForeColor = System.Drawing.Color.White
         Me.lblHeader.Location = New System.Drawing.Point(0, 0)
         Me.lblHeader.Name = "lblHeader"
         Me.lblHeader.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
@@ -169,7 +178,7 @@ Partial Class teacherfrm
         '
         'lblWelcome
         '
-        Me.lblWelcome.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblWelcome.Dock = System.Windows.Forms.DockStyle.Top
         Me.lblWelcome.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold)
         Me.lblWelcome.ForeColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.lblWelcome.Location = New System.Drawing.Point(0, 0)
@@ -178,6 +187,56 @@ Partial Class teacherfrm
         Me.lblWelcome.TabIndex = 0
         Me.lblWelcome.Text = "Welcome Teacher!" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Use the menu to access Grades and Announcements."
         Me.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Gray
+        Me.Label1.Location = New System.Drawing.Point(12, 67)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(105, 15)
+        Me.Label1.TabIndex = 10
+        Me.Label1.Text = "College of Lycem "
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblTitle
+        '
+        Me.lblTitle.AutoSize = True
+        Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitle.ForeColor = System.Drawing.Color.White
+        Me.lblTitle.Location = New System.Drawing.Point(12, 82)
+        Me.lblTitle.Name = "lblTitle"
+        Me.lblTitle.Size = New System.Drawing.Size(119, 21)
+        Me.lblTitle.TabIndex = 9
+        Me.lblTitle.Text = "Teacher Portal"
+        Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Gray
+        Me.Label3.Location = New System.Drawing.Point(-21, 112)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(271, 15)
+        Me.Label3.TabIndex = 12
+        Me.Label3.Text = "——————————————————————"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Gray
+        Me.Label2.Location = New System.Drawing.Point(-21, 523)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(271, 15)
+        Me.Label2.TabIndex = 13
+        Me.Label2.Text = "——————————————————————"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'teacherfrm
         '
@@ -191,9 +250,15 @@ Partial Class teacherfrm
         Me.Text = "Teacher Dashboard"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.pnlSidebar.ResumeLayout(False)
+        Me.pnlSidebar.PerformLayout()
         Me.pnlHeader.ResumeLayout(False)
         Me.pnlMain.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
+
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lblTitle As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
 End Class
