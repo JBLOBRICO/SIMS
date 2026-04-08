@@ -99,6 +99,8 @@
     </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -164,6 +166,12 @@
     <Compile Include="courselist.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="dashboardadmin.Designer.vb">
+      <DependentUpon>dashboardadmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dashboardadmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="dashboardteacher.Designer.vb">
       <DependentUpon>dashboardteacher.vb</DependentUpon>
     </Compile>
@@ -187,6 +195,12 @@
       <DependentUpon>enrollmentslist.vb</DependentUpon>
     </Compile>
     <Compile Include="enrollmentslist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="financedashboard.Designer.vb">
+      <DependentUpon>financedashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="financedashboard.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Financefrm.Designer.vb">
@@ -234,6 +248,12 @@
       <DependentUpon>paymentfrm.vb</DependentUpon>
     </Compile>
     <Compile Include="paymentfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="registrardashboard.Designer.vb">
+      <DependentUpon>registrardashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="registrardashboard.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="registrarfrm.Designer.vb">
@@ -313,6 +333,9 @@
     <EmbeddedResource Include="courselist.resx">
       <DependentUpon>courselist.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="dashboardadmin.resx">
+      <DependentUpon>dashboardadmin.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="dashboardteacher.resx">
       <DependentUpon>dashboardteacher.vb</DependentUpon>
     </EmbeddedResource>
@@ -345,6 +368,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="paymentfrm.resx">
       <DependentUpon>paymentfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="registrardashboard.resx">
+      <DependentUpon>registrardashboard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="registrarfrm.resx">
       <DependentUpon>registrarfrm.vb</DependentUpon>
