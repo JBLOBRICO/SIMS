@@ -4,7 +4,7 @@ Partial Class adduserform
 
     Private components As System.ComponentModel.IContainer
     Private pnlDivider As Panel
-    Private pnlBody As Panel
+    Private WithEvents pnlBody As Panel
     Private lblUsername As Label
     Private txtUsername As TextBox
     Private lblPassword As Label
@@ -19,18 +19,18 @@ Partial Class adduserform
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(adduserform))
         Me.pnlDivider = New System.Windows.Forms.Panel()
         Me.pnlBody = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.lblUsername = New System.Windows.Forms.Label()
         Me.txtUsername = New System.Windows.Forms.TextBox()
+        Me.btnCancel = New System.Windows.Forms.Button()
         Me.lblPassword = New System.Windows.Forms.Label()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.lblConfirmPassword = New System.Windows.Forms.Label()
         Me.txtConfirmPassword = New System.Windows.Forms.TextBox()
         Me.lblRole = New System.Windows.Forms.Label()
         Me.cboRole = New System.Windows.Forms.ComboBox()
-        Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.pnlBody.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -62,6 +62,28 @@ Partial Class adduserform
         Me.pnlBody.Size = New System.Drawing.Size(450, 447)
         Me.pnlBody.TabIndex = 0
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(209, 9)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(49, 55)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 9
+        Me.PictureBox1.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(14, Byte), Integer), CType(CType(24, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(133, 72)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(212, 25)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "User Account Creation"
+        '
         'lblUsername
         '
         Me.lblUsername.AutoSize = True
@@ -81,6 +103,20 @@ Partial Class adduserform
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(362, 23)
         Me.txtUsername.TabIndex = 1
+        '
+        'btnCancel
+        '
+        Me.btnCancel.BackColor = System.Drawing.Color.White
+        Me.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancel.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(107, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.btnCancel.Location = New System.Drawing.Point(251, 388)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(100, 30)
+        Me.btnCancel.TabIndex = 1
+        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = False
         '
         'lblPassword
         '
@@ -145,20 +181,6 @@ Partial Class adduserform
         Me.cboRole.Size = New System.Drawing.Size(166, 23)
         Me.cboRole.TabIndex = 7
         '
-        'btnCancel
-        '
-        Me.btnCancel.BackColor = System.Drawing.Color.White
-        Me.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancel.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(107, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.btnCancel.Location = New System.Drawing.Point(251, 388)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(100, 30)
-        Me.btnCancel.TabIndex = 1
-        Me.btnCancel.Text = "Cancel"
-        Me.btnCancel.UseVisualStyleBackColor = False
-        '
         'btnSave
         '
         Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(107, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(42, Byte), Integer))
@@ -171,28 +193,6 @@ Partial Class adduserform
         Me.btnSave.TabIndex = 0
         Me.btnSave.Text = "Create User"
         Me.btnSave.UseVisualStyleBackColor = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(14, Byte), Integer), CType(CType(24, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(133, 72)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(212, 25)
-        Me.Label1.TabIndex = 8
-        Me.Label1.Text = "User Account Creation"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(209, 9)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(49, 55)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 9
-        Me.PictureBox1.TabStop = False
         '
         'adduserform
         '

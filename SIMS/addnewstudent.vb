@@ -73,4 +73,14 @@ Public Class addnewstudent
         dtpBirthdate.Value = DateTime.Now
     End Sub
 
+    Private Sub pnlContainer_Paint(sender As Object, e As PaintEventArgs) Handles pnlContainer.Paint
+        ' Rounded corners para sa Panel
+        Dim pathPanel As New System.Drawing.Drawing2D.GraphicsPath()
+        pathPanel.AddArc(0, 0, 20, 20, 180, 90)
+        pathPanel.AddArc(pnlContainer.Width - 20, 0, 20, 20, 270, 90)
+        pathPanel.AddArc(pnlContainer.Width - 20, pnlContainer.Height - 20, 20, 20, 0, 90)
+        pathPanel.AddArc(0, pnlContainer.Height - 20, 20, 20, 90, 90)
+        pathPanel.CloseFigure()
+        pnlContainer.Region = New Region(pathPanel)
+    End Sub
 End Class

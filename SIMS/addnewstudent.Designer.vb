@@ -54,7 +54,8 @@ Partial Class addnewstudent
         Me.pnlContainer.Controls.Add(Me.txtAddress)
         Me.pnlContainer.Controls.Add(Me.btnSave)
         Me.pnlContainer.Controls.Add(Me.btnCancel)
-        Me.pnlContainer.Location = New System.Drawing.Point(40, 30)
+        Me.pnlContainer.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pnlContainer.Location = New System.Drawing.Point(73, 36)
         Me.pnlContainer.Name = "pnlContainer"
         Me.pnlContainer.Size = New System.Drawing.Size(420, 580)
         Me.pnlContainer.TabIndex = 0
@@ -62,8 +63,8 @@ Partial Class addnewstudent
         'lblHeader
         '
         Me.lblHeader.Font = New System.Drawing.Font("Segoe UI Semibold", 16.0!)
-        Me.lblHeader.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(120, Byte), Integer), CType(CType(215, Byte), Integer))
-        Me.lblHeader.Location = New System.Drawing.Point(30, 25)
+        Me.lblHeader.ForeColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(14, Byte), Integer), CType(CType(24, Byte), Integer))
+        Me.lblHeader.Location = New System.Drawing.Point(94, 17)
         Me.lblHeader.Name = "lblHeader"
         Me.lblHeader.Size = New System.Drawing.Size(300, 40)
         Me.lblHeader.TabIndex = 0
@@ -71,8 +72,8 @@ Partial Class addnewstudent
         '
         'lblID
         '
-        Me.lblID.Font = New System.Drawing.Font("Segoe UI", 8.5!, System.Drawing.FontStyle.Bold)
-        Me.lblID.ForeColor = System.Drawing.Color.Gray
+        Me.lblID.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(107, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.lblID.Location = New System.Drawing.Point(35, 80)
         Me.lblID.Name = "lblID"
         Me.lblID.Size = New System.Drawing.Size(100, 23)
@@ -90,7 +91,7 @@ Partial Class addnewstudent
         'lblFN
         '
         Me.lblFN.Font = Me.lblID.Font
-        Me.lblFN.ForeColor = System.Drawing.Color.Gray
+        Me.lblFN.ForeColor = System.Drawing.Color.FromArgb(CType(CType(107, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.lblFN.Location = New System.Drawing.Point(35, 145)
         Me.lblFN.Name = "lblFN"
         Me.lblFN.Size = New System.Drawing.Size(100, 23)
@@ -108,7 +109,7 @@ Partial Class addnewstudent
         'lblLN
         '
         Me.lblLN.Font = Me.lblID.Font
-        Me.lblLN.ForeColor = System.Drawing.Color.Gray
+        Me.lblLN.ForeColor = System.Drawing.Color.FromArgb(CType(CType(107, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.lblLN.Location = New System.Drawing.Point(35, 210)
         Me.lblLN.Name = "lblLN"
         Me.lblLN.Size = New System.Drawing.Size(100, 23)
@@ -126,7 +127,7 @@ Partial Class addnewstudent
         'lblEmail
         '
         Me.lblEmail.Font = Me.lblID.Font
-        Me.lblEmail.ForeColor = System.Drawing.Color.Gray
+        Me.lblEmail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(107, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.lblEmail.Location = New System.Drawing.Point(35, 275)
         Me.lblEmail.Name = "lblEmail"
         Me.lblEmail.Size = New System.Drawing.Size(100, 23)
@@ -144,7 +145,7 @@ Partial Class addnewstudent
         'lblBD
         '
         Me.lblBD.Font = Me.lblID.Font
-        Me.lblBD.ForeColor = System.Drawing.Color.Gray
+        Me.lblBD.ForeColor = System.Drawing.Color.FromArgb(CType(CType(107, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.lblBD.Location = New System.Drawing.Point(35, 340)
         Me.lblBD.Name = "lblBD"
         Me.lblBD.Size = New System.Drawing.Size(100, 23)
@@ -153,6 +154,7 @@ Partial Class addnewstudent
         '
         'dtpBirthdate
         '
+        Me.dtpBirthdate.CalendarMonthBackground = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.dtpBirthdate.Font = Me.txtStudentID.Font
         Me.dtpBirthdate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpBirthdate.Location = New System.Drawing.Point(35, 360)
@@ -163,10 +165,10 @@ Partial Class addnewstudent
         'lblAddr
         '
         Me.lblAddr.Font = Me.lblID.Font
-        Me.lblAddr.ForeColor = System.Drawing.Color.Gray
+        Me.lblAddr.ForeColor = System.Drawing.Color.FromArgb(CType(CType(107, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.lblAddr.Location = New System.Drawing.Point(35, 405)
         Me.lblAddr.Name = "lblAddr"
-        Me.lblAddr.Size = New System.Drawing.Size(100, 23)
+        Me.lblAddr.Size = New System.Drawing.Size(136, 23)
         Me.lblAddr.TabIndex = 11
         Me.lblAddr.Text = "COMPLETE ADDRESS"
         '
@@ -176,18 +178,19 @@ Partial Class addnewstudent
         Me.txtAddress.Location = New System.Drawing.Point(35, 425)
         Me.txtAddress.Multiline = True
         Me.txtAddress.Name = "txtAddress"
+        Me.txtAddress.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtAddress.Size = New System.Drawing.Size(350, 60)
         Me.txtAddress.TabIndex = 12
         '
         'btnSave
         '
-        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(120, Byte), Integer), CType(CType(215, Byte), Integer))
+        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(107, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!)
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(235, 510)
+        Me.btnSave.Location = New System.Drawing.Point(54, 509)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(150, 45)
+        Me.btnSave.Size = New System.Drawing.Size(133, 45)
         Me.btnSave.TabIndex = 13
         Me.btnSave.Text = "Save Record"
         Me.btnSave.UseVisualStyleBackColor = False
@@ -195,25 +198,26 @@ Partial Class addnewstudent
         'btnCancel
         '
         Me.btnCancel.BackColor = System.Drawing.Color.White
+        Me.btnCancel.FlatAppearance.BorderSize = 0
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancel.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.btnCancel.ForeColor = System.Drawing.Color.DimGray
-        Me.btnCancel.Location = New System.Drawing.Point(120, 510)
+        Me.btnCancel.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(107, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.btnCancel.Location = New System.Drawing.Point(236, 509)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(100, 45)
+        Me.btnCancel.Size = New System.Drawing.Size(120, 45)
         Me.btnCancel.TabIndex = 14
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
         'addnewstudent
         '
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(500, 650)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(107, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(564, 650)
         Me.Controls.Add(Me.pnlContainer)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "addnewstudent"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Register New Student"
         Me.pnlContainer.ResumeLayout(False)
         Me.pnlContainer.PerformLayout()

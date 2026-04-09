@@ -258,8 +258,8 @@
       <DependentUpon>teacherfrm.vb</DependentUpon>
     </Compile>
     <Compile Include="teacherfrm.vb">
-  <SubType>Form</SubType>
-</Compile>
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Usermngmtfrm.Designer.vb">
       <DependentUpon>Usermngmtfrm.vb</DependentUpon>
     </Compile>
